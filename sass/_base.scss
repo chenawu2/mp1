@@ -1,13 +1,185 @@
 @import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
-@import url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
+@import url('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
 
+$mainheight: 600px;
 
 h1 {
   font-size: 2.2rem;
   color: lighten($orange, 25);
 }
 
-.test {
-  font-size: 1.2rem;
-  color: $blue;
+a{
+	text-decoration: none;
+
 }
+
+li {
+	list-style: none;
+	float: left;
+	margin-left: 15px;
+	padding-top: 15px;
+}
+
+#banner {
+	background: url('/img/initial.jpg') no-repeat center top;
+	background-size: cover;
+	width: 100%;
+	height: $mainheight;
+	position: fixed;
+
+	#tint {
+		z-index: 1;
+	    height: 100%;
+	    width: 100%;
+	    top: 0px;
+	    left: 0px;
+	    background: rgba(0, 0, 0, 0.2);
+	}
+
+}
+
+#header {
+	background: transparent;
+	height: 50px;
+	width: 100%;
+	z-index: 10;
+	padding-top: 50px;
+	position: fixed;
+	transition: height 0.3s linear 0s, padding 0.3s linear 0s;
+
+	a:visited {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#logo {
+	float: left;
+	font-family: "Helvetica";
+	font-size: 40px;
+}
+
+.nav {
+	float: right;
+	a {
+		font-size: 20px;	
+	}
+}
+#home {
+	color: white;
+}
+
+
+#contentWrap {
+	max-width: 960px;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	padding-top: 3cm;
+	padding-bottom: 3cm;
+}
+
+.ext1 {
+	width: 100%;
+	background: #E6E6FA;
+	position: relative;
+}
+
+.ext2 {
+	width: 100%;
+	background: white;
+	position: relative;
+	overflow: hidden;
+}
+
+.content {
+	width: 100%;
+}
+.col-profession {
+	width: 33.3%;
+	float: left;
+	margin: 0 auto;
+}
+
+.shifter {
+	top: 600px;
+	position: relative;
+	text-align: center;
+}
+
+.modalScreen {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 200ms ease-in;
+	-moz-transition: opacity 200ms ease-in;
+	transition: opacity 200ms ease-in;
+	pointer-events: none;
+}
+
+.modalScreen:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalScreen > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: white;
+	vertical-align: middle
+}
+
+.greyTint {
+  -webkit-opacity: 0.25;
+  -moz-opacity: 0.25;
+  opacity: 0.25;
+}
+
+.greyTint:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+.greyMulti {
+  -webkit-opacity: 0.25;
+  -moz-opacity: 0.25;
+  opacity: 0.25;
+-webkit-transition: all 3s ease;
+  -moz-transition: all 3s ease;
+  -ms-transition: all 3s ease;
+  -o-transition: all 3s ease;
+  transition: all 3s ease;
+}
+
+.greyMulti:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+
+#footer {
+	background: black;
+	width: 100%;
+	height: 50;
+    overflow: hidden;
+    display: block;
+    color: white;
+    text-align: left;
+}
+
+
