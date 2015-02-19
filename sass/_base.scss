@@ -143,43 +143,67 @@ li {
 }
 
 .greyTint {
-  -webkit-opacity: 0.25;
-  -moz-opacity: 0.25;
-  opacity: 0.25;
+	@include opacity(0.25);
 }
 
 .greyTint:hover {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
+	@include opacity(1.0);
 }
 
 .greyMulti {
-  -webkit-opacity: 0.25;
-  -moz-opacity: 0.25;
-  opacity: 0.25;
--webkit-transition: all 3s ease;
-  -moz-transition: all 3s ease;
-  -ms-transition: all 3s ease;
-  -o-transition: all 3s ease;
-  transition: all 3s ease;
+	@include opacity(0.25);
+  @include transition(all 3s ease);
 }
 
 .greyMulti:hover {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
+	@include opacity(1.0);
 }
-
 
 #footer {
 	background: black;
 	width: 100%;
-	height: 50;
+	height: 100px;
     overflow: hidden;
     display: block;
     color: white;
     text-align: left;
 }
 
+.sliderContainer {
+  max-width: 400px;
+  background-color: red;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
 
+.sliderContainer div {
+  background-color: white;
+  width: 100%;
+  display: inline-block;
+  display: none;
+}
+
+.sliderContainer img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  position: relative;
+}
+
+.prev {
+  right: 5px;
+}
+
+.next {
+  left: 5px;
+}
+
+.sectionTitle {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 200%;
+	font-family: 'Merriweather', serif;
+}

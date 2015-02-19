@@ -37,34 +37,13 @@ $('#home, #profession, #modal, #video, #contact, #slider').on('click', function(
 		target = $('#aContact');
 	}
 	else if (target == 'slider') {
-		target2.style.color = "red";
+		target = $('#aSlider');
 	}
 
     $('html, body').stop().animate({
        scrollTop: target.offset().top-75
     }, 1000);
 });
-
-// var aTop, aProfession, aVideo, aContact, aSlider;
-// function positionNav() {
-// 	aTop = document.getElementById('top');
-// 	aProfession = document.getElementById('aProfession');
-// 	aVideo = document.getElementById('aVideo');
-// 	aContact = document.getElementById('aContact');
-// 	aSlider = document.getElementById('aSlider');
-
-// 	var yPos = window.pageYOffset;
-
-// 	if (yPos >= aTop.offsetTop) {
-// 		var home = document.getElementById('home');
-// 		home.style.color = "green";
-// 	}
-// 	if (yPos < aProfession.getBoundingClientRect().top) {
-// 		var home = document.getElementById('profession');
-// 		home.style.color = "green";
-// 	}
-// }
-// window.addEventListener("scroll", positionNav);
 
 $(window).scroll(function() {
 	if ($(window).scrollTop() >= $('#top').offset().top-off) {
@@ -121,8 +100,33 @@ $(window).scroll(function() {
 	}
 });
 
-function white(x) {
-	$(x).children().each(function() {
-		this.style.color = "white";
-	});
+var currentIndex = 0,
+  items = $('.sliderContainer div'),
+  itemAmt = items.length;
+
+function cycleItems() {
+  var item = $('.sliderContainer div').eq(currentIndex);
+  items.hide();
+  item.css('display','inline-block');
 }
+
+$('.next').click(function() {
+  //clearInterval(autoSlide);
+  currentIndex += 1;
+  if (currentIndex > itemAmt - 1) {
+    currentIndex = 0;
+  }
+  cycleItems();
+});
+
+$('.prev').click(function() {
+ // clearInterval(autoSlide);
+  currentIndex -= 1;
+  if (currentIndex < 0) {
+    currentIndex = itemAmt - 1;
+  }
+  cycleItems();
+});
+
+
+

@@ -1,0 +1,14 @@
+@mixin transition($ease) {
+	-webkit-transition: $ease;
+  -moz-transition: $ease;
+  -ms-transition: $ease;
+  -o-transition: $ease;
+  transition: $ease;
+}
+
+@mixin opacity($op) {
+	-webkit-opacity: $op;
+  -moz-opacity: $op;
+  opacity: $op;
+
+}
