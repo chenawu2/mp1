@@ -1,28 +1,13 @@
-// var divs = document.getElementsByTagName('div');
-// for(var i=0; i<divs.length; i++) {
-//   divs[i].addEventListener("click", highlightThis);
-//   /*
-//   divs[i].addEventListener("click", highlightThis, true);
-//   divs[i].addEventListener("click", highlightThis, false);*/
-// }
-var off = 77;
-function highlightThis(event) {
-    //event.stopPropagation();
-  
-    var backgroundColor = this.style.backgroundColor;
-    this.style.backgroundColor='yellow';
-    alert(this.className);
-    this.style.backgroundColor=backgroundColor;
-}
 
+var off = 77;
+
+//smooth scrolling
 $('#home, #profession, #modal, #video, #contact, #slider').on('click', function(e){
     e.preventDefault();
     var target = $(this).get(0).id;
     var target2 = $(this).get(0);
     if (target == 'home'){
-		//$(this).get(0).style.color="blue";
 		target = $('#top');
-
 	}
 	else if (target == 'profession') {
 		target = $('#aProfession');
@@ -45,6 +30,7 @@ $('#home, #profession, #modal, #video, #contact, #slider').on('click', function(
     }, 1000);
 });
 
+//header position indicator
 $(window).scroll(function() {
 	if ($(window).scrollTop() >= $('#top').offset().top-off) {
 		$('#home').css("color","red");
@@ -100,6 +86,8 @@ $(window).scroll(function() {
 	}
 });
 
+
+//slider functions
 var currentIndex = 0,
   items = $('.sliderContainer div'),
   itemAmt = items.length;
